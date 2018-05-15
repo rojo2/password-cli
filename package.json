@@ -1,0 +1,47 @@
+{
+  "name": "@rojo2/password-cli",
+  "version": "1.0.0",
+  "description": "CLI to use @rojo2/password easily",
+  "main": "bin/password-cli.js",
+  "author": "ROJO 2 <hola@rojo2.com> (http://rojo2.com)",
+  "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c && echo \"#!/usr/bin/env node\n$(cat bin/password-cli.js)\" > bin/password-cli.js && chmod +x bin/password-cli.js",
+    "test": "NODE_ENV=test mocha --require babel-core/register",
+    "test:watch": "NODE_ENV=test mocha --watch --require babel-core/register"
+  },
+  "files": [
+    "bin"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "bin": {
+    "password": "bin/password-cli.js"
+  },
+  "keywords": [
+    "password",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rojo2/is-string.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rojo2/is-string/issues"
+  },
+  "dependencies": {
+    "@rojo2/password": "^1.0.1",
+    "commander": "^2.15.1"
+  },
+  "homepage": "https://github.com/rojo2/is-string#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "rollup": "^0.59.0",
+    "rollup-plugin-babel": "^3.0.4"
+  }
+}
